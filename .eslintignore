@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+dist/
+.astro/
+
+# Config files
+*.config.js
+*.config.mjs
+*.config.ts
+
+# Build files
+build/
+.output/
+
+# Cache files
+.cache/
+.temp/
+
+# Env files
+.env
+.env.local
+.env.production
+
+# Doc files
+*.md
+
+# Data files
+*.json
+*.yaml
+*.yml
+
+# Assets files
+public/
+assets/ 

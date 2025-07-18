@@ -5,7 +5,7 @@ export default function Particles() {
 
   const particles = [];
 
-  for (let index = 0; index < 50; index++) {
+  for (let index = 0; index < 30; index++) {
     particles.push(<Particle />);
   }
   

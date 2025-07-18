@@ -1,0 +1,23 @@
+---
+import '../../styles/global.css';
+
+interface Props {
+    text: string;
+    size: 'sm' | 'md' | 'lg';
+}
+
+const { text, size } = Astro.props;
+
+const format = {
+    'sm': 'text-3xl',
+    'md': 'text-6xl',
+    'lg': 'text-9xl'
+}
+
+---
+<h4
+    style="animation: gradient-move 5s infinite; background-size: 200% 200%;"
+    class=`${format[size]} font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-4`
+>
+    {text}
+</h4>

@@ -1,0 +1,16 @@
+---
+    interface Props {
+        social: 'github' | 'linkedin' ;
+        url: string;
+    }
+
+    const { social, url } = Astro.props;
+---
+
+<div class="bg-white/10op-blur-md rounded-full p-5 border border-white/20 hover:cursor-pointer">
+    <a aria-label={`Dev's ${social}`} href={url}>
+        <svg class="w-10 h-10">
+            <use href={`src/assets/sprite.svg#${social}`} />
+        </svg>
+    </a>
+</div> 

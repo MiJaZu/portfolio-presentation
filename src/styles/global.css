@@ -11,12 +11,29 @@
     @apply hover:scale-105 hover:-translate-y-4 transition-all
 }
 
+.typing-animation {
+    overflow: hidden;
+    border-right: solid 3px var(--color-blue-500);
+    white-space: nowrap;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s infinite;
+}
+
+@keyframes typing {
+    from { width: 0%; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from { border-right-color: transparent; }
+    to { border-right-color: var(--color-blue-500); }
+}
+
 @keyframes gradient-move {
-    0%, 100% {background-position: 0% 50% }
-    50% {background-position: 100% 50% }
+    0%, 100% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
 }
 
 @keyframes float {
-    0%, 100% {transform: translateY(0) scale(1) rotate(0deg);}
-    50% { transform: translateY(-30px) scale(1.5) rotate(180deg);}
+    0%, 100% { transform: translateY(0) scale(1) rotate(0deg); }
+    50% { transform: translateY(-30px) scale(1.5) rotate(180deg); }
 }

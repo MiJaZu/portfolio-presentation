@@ -7,9 +7,9 @@
     const { social, url } = Astro.props;
 ---
 
-<div class="bg-white/10op-blur-md rounded-full p-5 border border-white/20 hover:cursor-pointer">
+<div class="bg-white/10 backdrop-blur-sm rounded-full p-5 border border-white/20 hover:cursor-pointer hover:-translate-y-1.5 transition-all duration-200 group">
     <a aria-label={`Dev's ${social}`} href={url}>
-        <svg class="w-10 h-10">
+        <svg class="w-10 h-10 group-hover:scale-110 transition-all">
             <use href={`src/assets/sprite.svg#${social}`} />
         </svg>
     </a>

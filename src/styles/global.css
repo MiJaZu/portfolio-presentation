@@ -7,6 +7,13 @@
     
 }
 
+/* Effects */
+.glass-effect {
+    @apply bg-white/10 backdrop-blur-md border border-white/10
+}
+
+
+/* Animation */
 .hover-lift {
     @apply hover:scale-105 hover:-translate-y-4 transition-all
 }

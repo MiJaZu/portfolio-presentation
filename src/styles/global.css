@@ -1,46 +1,64 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
-    --bg-primary: theme(--color-slate-900);
-    --text-primary: theme(--color-slate-50);
-    --text-secondary: theme(--color-slate-300);
-    
+  --bg-primary: theme(--color-slate-900);
+  --text-primary: theme(--color-slate-50);
+  --text-secondary: theme(--color-slate-300);
 }
 
 /* Effects */
 .glass-effect {
-    @apply bg-white/10 backdrop-blur-md border border-white/10
+  @apply bg-white/10 backdrop-blur-md border border-white/10;
 }
-
 
 /* Animation */
 .hover-lift {
-    @apply hover:scale-105 hover:-translate-y-4 transition-all
+  @apply hover:scale-105 hover:-translate-y-4 transition-all;
 }
 
 .typing-animation {
-    overflow: hidden;
-    border-right: solid 3px var(--color-blue-500);
-    white-space: nowrap;
-    animation: typing 3.5s steps(40, end), blink-caret 0.75s infinite;
+  overflow: hidden;
+  border-right: solid 3px var(--color-blue-500);
+  white-space: nowrap;
+  animation:
+    typing 3.5s steps(40, end),
+    blink-caret 0.75s infinite;
 }
 
 @keyframes typing {
-    from { width: 0%; }
-    to { width: 100%; }
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 @keyframes blink-caret {
-    from { border-right-color: transparent; }
-    to { border-right-color: var(--color-blue-500); }
+  from {
+    border-right-color: transparent;
+  }
+  to {
+    border-right-color: var(--color-blue-500);
+  }
 }
 
 @keyframes gradient-move {
-    0%, 100% { background-position: 0% 50% }
-    50% { background-position: 100% 50% }
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0) scale(1) rotate(0deg); }
-    50% { transform: translateY(-30px) scale(1.5) rotate(180deg); }
+  0%,
+  100% {
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-30px) scale(1.5) rotate(180deg);
+  }
 }

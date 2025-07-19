@@ -6,7 +6,7 @@ import typescriptParser from '@typescript-eslint/parser';
 export default [
   // Configuración base de ESLint
   js.configs.recommended,
-  
+
   // Typescript configuration
   {
     files: ['**/*.ts', '**/*.tsx'],
@@ -16,20 +16,19 @@ export default [
         ecmaVersion: 'latest',
         sourceType: 'module',
         ecmaFeatures: {
-          jsx: true
-        }
-      }
+          jsx: true,
+        },
+      },
     },
     plugins: {
-      '@typescript-eslint': typescript
+      '@typescript-eslint': typescript,
     },
     rules: {
       ...typescript.configs.recommended.rules,
       '@typescript-eslint/no-unused-vars': 'error',
       '@typescript-eslint/no-explicit-any': 'warn',
-      '@typescript-eslint/prefer-const': 'error',
-      '@typescript-eslint/no-var-requires': 'error'
-    }
+      '@typescript-eslint/no-var-requires': 'error',
+    },
   },
 
   // Javascript configurations
@@ -37,13 +36,13 @@ export default [
     files: ['**/*.js', '**/*.mjs'],
     languageOptions: {
       ecmaVersion: 'latest',
-      sourceType: 'module'
+      sourceType: 'module',
     },
     rules: {
       'no-unused-vars': 'error',
       'prefer-const': 'error',
-      'no-var': 'error'
-    }
+      'no-var': 'error',
+    },
   },
 
   // Astro configurations
@@ -61,8 +60,8 @@ export default [
       'astro/no-unused-css-selector': 'error',
       'astro/prefer-class-list-directive': 'error',
       'astro/prefer-object-class-list': 'error',
-      'astro/prefer-split-class-list': 'error'
-    }
+      'astro/prefer-split-class-list': 'error',
+    },
   },
 
   // Global configuration
@@ -94,7 +93,7 @@ export default [
       'no-sparse-arrays': 'error',
       'no-unexpected-multiline': 'error',
       'use-isnan': 'error',
-      'valid-typeof': 'error'
-    }
-  }
+      'valid-typeof': 'error',
+    },
+  },
 ];

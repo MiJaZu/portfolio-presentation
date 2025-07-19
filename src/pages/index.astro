@@ -11,43 +11,68 @@ import GlassCard from '../components/Astro/GlassCard.astro';
 ---
 
 <Layout>
-    <Particles client:only /> 
-    <header class="relative z-1 pt-20 pb-16">
-        <div class="w-40 h-40 m-12 p-3  glass-effect rounded-full mx-auto hover-lift">
-          <Image src={devPicture} alt="developer's profile" class="w-full h-full rounded-full object-cover" aria-label="developer's profile" loading={'eager'} />
+  <Particles client:only="preact" />
+  <header class="relative z-1 pt-20 pb-16">
+    <div
+      class="w-40 h-40 m-12 p-3 glass-effect rounded-full mx-auto hover-lift"
+    >
+      <Image
+        src={devPicture}
+        alt="developer's profile"
+        class="w-full h-full rounded-full object-cover"
+        aria-label="developer's profile"
+        loading={'eager'}
+      />
+    </div>
+    <div class="text-center mb-12">
+      <div
+        class="glass-effect rounded-full px-8 py-3 w-fit mx-auto mb-3 hover-lift"
+      >
+        <span class="text-blue-500 text-lg font-mono">@Mijazu</span>
+      </div>
+      <ColoredText text="Misael Zurita" size={'md'} />
+      <h2 class="text-2xl mb-4 typing-animation">Full stack developer</h2>
+      <p class="text-lg text-gray-400">
+        Full Stack Developer | React JS | Make it possible
+      </p>
+    </div>
+    <div class="flex justify-center gap-6">
+      <SocialMediaLogo social={'github'} url="https://github.com/MiJaZu" />
+      <SocialMediaLogo
+        social={'linkedin'}
+        url="https://www.linkedin.com/in/misael-zurita"
+      />
+    </div>
+  </header>
+  <main class="relative z-10 max-w-6xl mx-auto">
+    <GlassCard>
+      <ColoredText text="About me" size="sm" />
+      <div class="grid grid-cols-2 gap-8 text-gray-300 text-lg">
+        <div class="">
+          <p class="mb-6">
+            Full stack developer con 4 años de experiencia trabajando con
+            JavaScript y tecnologías SQL Server. Apasionado por crear soluciones
+            innovadoras y experiencias de usuario excepcionales.
+          </p>
+          <p>
+            Busco grandes oportunidades para crecer profesionalmente en
+            tecnologías trending como React JS, TypeScript y Node JS, siempre
+            manteniéndome actualizado con las últimas tendencias del desarrollo
+            web.
+          </p>
         </div>
-        <div class="text-center mb-12">
-          <div class="glass-effect rounded-full px-8 py-3 w-fit mx-auto mb-3 hover-lift  ">
-            <span class="text-blue-500 text-lg font-mono ">@Mijazu</span>
-          </div>
-          <ColoredText text="Misael Zurita" size={'md'} />
-          <h2 class="text-2xl mb-4  typing-animation"> Full stack developer </h2>
-          <p class="text-lg text-gray-400">Full Stack Developer | React JS | Make it possible</p>
+        <div class="text-lg">
+          <CustomList
+            client:only="preact"
+            list={[
+              'Available for freelance proyects',
+              'Open for new oportunities',
+              'Continous learning',
+            ]}
+          />
         </div>
-        <div class="flex justify-center gap-6">
-          <SocialMediaLogo social={'github'} url='https://github.com/MiJaZu' />
-          <SocialMediaLogo social={'linkedin'} url='https://www.linkedin.com/in/misael-zurita' />
-        </div>
-    </header>
-    <main class="relative z-10 max-w-6xl mx-auto">
-      <GlassCard>
-        <ColoredText text='About me' size='sm' />
-        <div class="grid grid-cols-2 gap-8 text-gray-300 text-lg" >
-          <div class="">
-            <p class="mb-6">
-              Full stack developer con 4 años de experiencia trabajando con JavaScript y tecnologías SQL Server. Apasionado por crear soluciones innovadoras y experiencias de usuario excepcionales.
-            </p>
-            <p>
-              Busco grandes oportunidades para crecer profesionalmente en tecnologías trending como React JS, TypeScript y Node JS, siempre manteniéndome actualizado con las últimas tendencias del desarrollo web.
-            </p>
-          </div>
-          <div class="text-lg">
-            <CustomList client:only list={['Available for freelance proyects', 'Open for new oportunities', 'Continous learning']} />
-          </div>
-        </div>
-      </GlassCard>
-      <GlassCard>
-        Another Content
-      </GlassCard>
-    </main>
-  </Layout>
+      </div>
+    </GlassCard>
+    <GlassCard> Another Content </GlassCard>
+  </main>
+</Layout>

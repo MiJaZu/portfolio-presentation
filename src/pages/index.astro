@@ -8,6 +8,7 @@ import { Image } from 'astro:assets';
 import Layout from '../components/Astro/Layout.astro';
 import ColoredText from '../components/Astro/ColoredText.astro';
 import GlassCard from '../components/Astro/GlassCard.astro';
+import SkillBar from '../components/Astro/SkillBar.astro';
 ---
 
 <Layout>
@@ -47,7 +48,7 @@ import GlassCard from '../components/Astro/GlassCard.astro';
   <main class="relative z-10 max-w-6xl mx-auto">
     <GlassCard>
       <ColoredText text="About me" size="sm" />
-      <div class="grid grid-cols-2 gap-8 text-gray-300 text-lg">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 text-gray-300 text-lg">
         <div class="">
           <p class="mb-6">
             Full stack developer con 4 años de experiencia trabajando con
@@ -73,6 +74,17 @@ import GlassCard from '../components/Astro/GlassCard.astro';
         </div>
       </div>
     </GlassCard>
-    <GlassCard> Another Content </GlassCard>
+    <GlassCard>
+      <ColoredText text="Technicall Skills" size="sm" />
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <SkillBar skill="JavaScript" percentage="90%" />
+        <SkillBar skill="Node.js" percentage="80%" />
+        <SkillBar skill="React JS" percentage="90%" />
+        <SkillBar skill="Typescript" percentage="70%" />
+        <SkillBar skill="SQL Server" percentage="70%" />
+        <SkillBar skill="HTML/CSS" percentage="95%" />
+        <SkillBar skill="Astro" percentage="50%" />
+      </div>
+    </GlassCard>
   </main>
 </Layout>

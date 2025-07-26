@@ -9,6 +9,7 @@ import Layout from '../components/Astro/Layout.astro';
 import ColoredText from '../components/Astro/ColoredText.astro';
 import GlassCard from '../components/Astro/GlassCard.astro';
 import SkillBar from '../components/Astro/SkillBar.astro';
+import SkillCard from '../components/React/SkillCard';
 ---
 
 <Layout>
@@ -32,7 +33,9 @@ import SkillBar from '../components/Astro/SkillBar.astro';
         <span class="text-blue-500 text-lg font-mono">@Mijazu</span>
       </div>
       <ColoredText text="Misael Zurita" size={'md'} />
-      <h2 class="text-2xl mb-4 typing-animation">Full stack developer</h2>
+      <div class="max-w-lg mx-auto">
+        <h2 class="text-2xl mb-4 typing-animation">Full stack developer</h2>
+      </div>
       <p class="text-lg text-gray-400">
         Full Stack Developer | React JS | Make it possible
       </p>
@@ -85,6 +88,23 @@ import SkillBar from '../components/Astro/SkillBar.astro';
         <SkillBar skill="HTML/CSS" percentage="95%" />
         <SkillBar skill="Astro" percentage="50%" />
       </div>
+    </GlassCard>
+    <GlassCard>
+      <ColoredText text="Professional Experience" size="sm" />
+      <SkillCard
+        skillNumber={1}
+        title="Full Stack Developer"
+        years={{ fromY: '2020' }}
+        description="Desarrollo de aplicaciones web completas usando JavaScript, React, Node.js y SQL Server. Implementación de arquitecturas escalables y optimización de rendimiento."
+        color="blue"
+      />
+      <SkillCard
+        skillNumber={2}
+        title="Frontend Developer"
+        years={{ fromY: '2019', toY: '2020' }}
+        description="Desarrollo de interfaces de usuario con JavaScript y tecnologías web modernas. Creación de experiencias de usuario intuitivas y responsivas."
+        color="purple"
+      />
     </GlassCard>
   </main>
 </Layout>

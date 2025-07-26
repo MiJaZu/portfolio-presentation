@@ -1,31 +1,23 @@
 ---
 import '../styles/global.css';
+// React components
 import Particles from '../components/React/Particles';
 import CustomList from '../components/React/CustomList';
+import JobCard from '../components/React/JobCard';
+import ProjectCard from '../components/Astro/ProjectCard.astro';
+//Astro components
 import SocialMediaLogo from '../components/Astro/SocialMediaLogo.astro';
-import devPicture from '../assets/dev.jpeg';
-import { Image } from 'astro:assets';
 import Layout from '../components/Astro/Layout.astro';
 import ColoredText from '../components/Astro/ColoredText.astro';
 import GlassCard from '../components/Astro/GlassCard.astro';
 import SkillBar from '../components/Astro/SkillBar.astro';
-import SkillCard from '../components/React/SkillCard';
+import Avatar from '../components/Astro/Avatar.astro';
 ---
 
 <Layout>
   <Particles client:only="preact" />
   <header class="relative z-1 pt-20 pb-16">
-    <div
-      class="w-40 h-40 m-12 p-3 glass-effect rounded-full mx-auto hover-lift"
-    >
-      <Image
-        src={devPicture}
-        alt="developer's profile"
-        class="w-full h-full rounded-full object-cover"
-        aria-label="developer's profile"
-        loading={'eager'}
-      />
-    </div>
+    <Avatar />
     <div class="text-center mb-12">
       <div
         class="glass-effect rounded-full px-8 py-3 w-fit mx-auto mb-3 hover-lift"
@@ -54,15 +46,11 @@ import SkillCard from '../components/React/SkillCard';
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 text-gray-300 text-lg">
         <div class="">
           <p class="mb-6">
-            Full stack developer con 4 años de experiencia trabajando con
-            JavaScript y tecnologías SQL Server. Apasionado por crear soluciones
-            innovadoras y experiencias de usuario excepcionales.
-          </p>
-          <p>
-            Busco grandes oportunidades para crecer profesionalmente en
-            tecnologías trending como React JS, TypeScript y Node JS, siempre
-            manteniéndome actualizado con las últimas tendencias del desarrollo
-            web.
+            Full stack developer with 4 years of experience. Looking for great
+            opportunities to grow professionally in trending technologies like
+            React JS, Typescript, Node JS, I also have experience working with
+            queries in SQL. I consider myself a developer who will learn the
+            necessary technologies to achieve the goals.
           </p>
         </div>
         <div class="text-lg">
@@ -91,20 +79,71 @@ import SkillCard from '../components/React/SkillCard';
     </GlassCard>
     <GlassCard>
       <ColoredText text="Professional Experience" size="sm" />
-      <SkillCard
+      <JobCard
         skillNumber={1}
-        title="Full Stack Developer"
-        years={{ fromY: '2020' }}
-        description="Desarrollo de aplicaciones web completas usando JavaScript, React, Node.js y SQL Server. Implementación de arquitecturas escalables y optimización de rendimiento."
+        title="Encora"
+        years={{ fromY: '2022' }}
+        tasks={[
+          'Created reusable custom React components for financial data visualization. ',
+          'Implemented intuitive export functionality allowing users to download financial reports. ',
+          'Improved component architecture resulting in more maintainable and scalable code across the application. ',
+          'Created interactive filtering tools enabling users to quickly locate specific invoices within large datasets. ',
+          'Developed onboarding experience making easier the use of the new features for billing reports ',
+          'Developed a user-friendly error handling system providing clear feedback and improving user experience. ',
+          'Implementation of complete strategy tests using multiple levels (Unit tests, E2E, Storybooks). ',
+          'Established consistent coding standards maintaining high-quality code throughout the project lifecycle. ',
+        ]}
         color="blue"
       />
-      <SkillCard
+      <JobCard
         skillNumber={2}
-        title="Frontend Developer"
-        years={{ fromY: '2019', toY: '2020' }}
-        description="Desarrollo de interfaces de usuario con JavaScript y tecnologías web modernas. Creación de experiencias de usuario intuitivas y responsivas."
+        title="Jalasoft"
+        years={{ fromY: '2020', toY: '2022' }}
+        tasks={[
+          'Worked with the improvement of a new tool to generate pages used by the company.',
+          'Generation of background processes to automate customer work.',
+          'Improved how to use many businesses processes in the documents.',
+          'Created charts to visualize the performance of the employees.',
+          'Reduced storage usage for handling huge data.',
+          'Created Survey administration software to observe the employees for feedback.',
+          'Participated in the implementation of the Warehouse Manage System mitigating bottlenecks when picking orders.',
+          'Improved the UI usage by moving the logic into stored procedures',
+        ]}
         color="purple"
       />
+      <JobCard
+        skillNumber={3}
+        title="Jala Foundation"
+        years={{ fromY: '2019', toY: '2020' }}
+        tasks={[
+          'Create microservices focused on providing information data.',
+          'Make events easier to find them using maps.',
+          'Reduced the time to join to the events using QR codes.',
+          'Make it easier for the customers to notify their events by email.',
+          'Increased the code coverage used in the project to keep it more than 90%.',
+        ]}
+        color="green"
+      />
+    </GlassCard>
+    <GlassCard>
+      <ColoredText text="Portfolio" size="sm" />
+      <div class="grid grid-cols-2 gap-10">
+        <ProjectCard
+          title="Presentation"
+          description="Created a portfolio using Astro JS to learn the library, I learned about the static files, use of tailwind js, and preact js"
+          tags={['Typescript', 'Github', 'Tailwind', 'Preact', 'Astro']}
+        />
+        <ProjectCard
+          title="Personal Blog"
+          description="Created My Personal Blog using Next JS to learn the library, I learned navigation between pages, use of CSS Modules in Next JS, pre-rendering and Data fetching, dynamic Routes"
+          tags={['CSS', 'Next JS', 'Typescript', 'Github']}
+        />
+        <ProjectCard
+          title="To Do"
+          description="Simple Todo list for creating editing and deleting the tasks saving them in simple state"
+          tags={['React', 'Node JS', 'Typescript']}
+        />
+      </div>
     </GlassCard>
   </main>
 </Layout>

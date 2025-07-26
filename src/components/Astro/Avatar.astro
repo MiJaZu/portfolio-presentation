@@ -1,0 +1,14 @@
+---
+import devPicture from '../assets/dev.jpeg';
+import { Image } from 'astro:assets';
+---
+
+<div class="w-40 h-40 m-12 p-3 glass-effect rounded-full mx-auto hover-lift">
+  <Image
+    src={devPicture}
+    alt="developer's profile"
+    class="w-full h-full rounded-full object-cover"
+    aria-label="developer's profile"
+    loading={'eager'}
+  />
+</div>

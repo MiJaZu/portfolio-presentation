@@ -124,8 +124,4 @@ This is a personal project, but suggestions are welcome. If you find a bug or ha
 - **LinkedIn**: [Misael Zurita](https://www.linkedin.com/in/misael-zurita)
 - **Email**: mija_zuca@hotmail.es
 
-## 📄 License
-
-This project is under the MIT License. See the `LICENSE` file for more details.
-
 ---

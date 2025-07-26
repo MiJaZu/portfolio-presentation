@@ -1,3 +1,5 @@
+import CustomList from './CustomList';
+
 interface SkillCardProps {
   skillNumber: number;
   title: string;
@@ -5,15 +7,15 @@ interface SkillCardProps {
     fromY: string;
     toY?: string;
   };
-  description: string;
+  tasks: string[];
   color: string;
 }
 
-export default function SkillCard({
+export default function JobCard({
   skillNumber,
   title,
   years,
-  description,
+  tasks,
   color,
 }: SkillCardProps) {
   return (
@@ -28,10 +30,10 @@ export default function SkillCard({
       </div>
       <div class="flex flex-col gap-2">
         <h2 class="text-2xl font-bold">{title}</h2>
-        <span class={`text-${color}-400 text-lg leading-relaxed`}>
+        <span class={`text-${color}-400 text-lg`}>
           {years.fromY} - {years.toY ?? 'present'}
         </span>
-        <p>{description}</p>
+        <CustomList list={tasks} />
       </div>
     </div>
   );

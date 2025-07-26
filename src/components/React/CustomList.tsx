@@ -2,7 +2,15 @@ interface CustomListProps {
   list: string[];
 }
 
-const COLORS = ['bg-green-500', 'bg-blue-500', 'bg-purple-500'];
+const COLORS = [
+  'bg-green-500',
+  'bg-blue-500',
+  'bg-purple-500',
+  'bg-red-500',
+  'bg-yellow-500',
+  'bg-cyan-500',
+  'bg-orange-500',
+];
 
 export default function CustomList({ list }: CustomListProps) {
   const customList = list.map((listItem, i) => (

@@ -1,23 +1,17 @@
+import { BG_COLORS } from '../../utils/constColors';
+
 interface CustomListProps {
   list: string[];
 }
 
-const COLORS = [
-  'bg-green-500',
-  'bg-blue-500',
-  'bg-purple-500',
-  'bg-red-500',
-  'bg-yellow-500',
-  'bg-cyan-500',
-  'bg-orange-500',
-];
+const colors = Object.values(BG_COLORS);
 
 export default function CustomList({ list }: CustomListProps) {
   const customList = list.map((listItem, i) => (
     <div key={i} class="flex items-center gap-3">
       <div
-        class={`${COLORS[i % COLORS.length]} w-3 h-3 rounded-full animate-pulse`}
-      ></div>
+        class={`${colors[i % colors.length]} min-w-3 h-3 rounded-full animate-pulse justify-start`}
+      />
       <span>{listItem}</span>
     </div>
   ));

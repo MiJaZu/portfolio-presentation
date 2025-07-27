@@ -2,7 +2,7 @@ export default function Particle() {
   const size = Math.random() * 6 + 3;
   /* eslint-disable no-undef */
   const x = Math.random() * window.innerWidth;
-  const y = Math.random() * window.innerWidth;
+  const y = Math.random() * window.innerHeight;
   const delay = Math.random() * 8;
 
   const inlineStyles = {

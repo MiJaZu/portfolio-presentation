@@ -12,7 +12,7 @@ const { social, url } = Astro.props;
 >
   <a aria-label={`Dev's ${social}`} href={url}>
     <svg class="w-10 h-10 group-hover:scale-110 transition-all">
-      <use href={`src/assets/sprite.svg#${social}`}></use>
+      <use href={`/sprite.svg#${social}`}></use>
     </svg>
   </a>
 </div>

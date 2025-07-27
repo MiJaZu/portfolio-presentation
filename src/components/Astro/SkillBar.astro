@@ -1,15 +1,20 @@
 ---
+import { WIDTH_PERCENTAGE } from '../../utils/constColors';
+
 const { skill, percentage } = Astro.props;
 ---
 
 <div class="grid grid-cols-1 gap-3">
   <div class="flex flex-row justify-between text-lg font-semibold">
     <span>{skill}</span>
-    <span class="text-blue-500">{percentage}</span>
+    <span class="text-blue-500">{percentage}%</span>
   </div>
   <div class="bg-gray-700 w-full h-4 rounded-full">
     <div
-      class:list=`w-[${percentage}] h-4  rounded-full bg-gradient-to-r from-blue-500 to-purple-500`
+      class:list={[
+        WIDTH_PERCENTAGE[percentage],
+        `h-4  rounded-full bg-gradient-to-r from-blue-500 to-purple-500`,
+      ]}
     >
     </div>
   </div>

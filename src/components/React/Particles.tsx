@@ -7,5 +7,7 @@ export default function Particles() {
     particles.push(<Particle />);
   }
 
-  return <div className="fixed top-0 left-0 w-full h-full">{particles}</div>;
+  return (
+    <div className="fixed top-0 left-0 w-screen h-screen">{particles}</div>
+  );
 }

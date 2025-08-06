@@ -1,0 +1,38 @@
+---
+import { BG_COLORS, TXT_COLORS } from '../../utils/constColors';
+import CustomList from './CustomList.astro';
+
+interface Props {
+  skillNumber: number;
+  title: string;
+  years: {
+    fromY: string;
+    toY?: string;
+  };
+  tasks: string[];
+  color: string;
+}
+
+const { skillNumber, title, years, tasks, color } = Astro.props;
+---
+
+<div class="flex flex-row gap-5 md:gap-10 my-10">
+  <div class="flex flex-col items-center">
+    <div
+      class:list={[
+        BG_COLORS[color],
+        'h-8 w-8 rounded-full ${BG_COLORS[color]} absolute text-center flex justify-center items-center',
+      ]}
+    >
+      <span class="text-white font-bold">{skillNumber}</span>
+    </div>
+    <div class:list={[BG_COLORS[color], 'h-full w-1']}></div>
+  </div>
+  <div class="flex flex-col gap-2">
+    <h2 class="text-2xl font-bold">{title}</h2>
+    <span class:list={[TXT_COLORS[color], 'text-lg']}>
+      {years.fromY} - {years.toY ?? 'present'}
+    </span>
+    <CustomList list={tasks} />
+  </div>
+</div>

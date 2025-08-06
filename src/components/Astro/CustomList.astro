@@ -1,0 +1,26 @@
+---
+import { BG_COLORS } from '../../utils/constColors';
+
+interface Props {
+  list: string[];
+}
+
+const { list } = Astro.props;
+const colors = Object.values(BG_COLORS);
+---
+
+<div>
+  {
+    list.map((listItem, i) => (
+      <div class="flex items-center gap-3">
+        <div
+          class:list={[
+            colors[i % colors.length],
+            'min-w-3 h-3 rounded-full animate-pulse justify-start',
+          ]}
+        />
+        <span>{listItem}</span>
+      </div>
+    ))
+  }
+</div>

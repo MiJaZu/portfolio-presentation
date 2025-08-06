@@ -1,0 +1,22 @@
+---
+import { BG_OPACITY, TXT_COLORS } from '../../utils/constColors';
+
+interface Props {
+  tags: string[];
+}
+const { tags } = Astro.props;
+const colors = ['blue', 'green', 'purple', 'yellow', 'red', 'pink'];
+---
+
+<div class="flex gap-2 flex-wrap">
+  {
+    tags.map((tag, index) => {
+      const color = colors[index % colors.length];
+      return (
+        <div class:list={['px-3 py-1 rounded-full', BG_OPACITY[color]]}>
+          <span class:list={TXT_COLORS[color]}>{tag}</span>
+        </div>
+      );
+    })
+  }
+</div>

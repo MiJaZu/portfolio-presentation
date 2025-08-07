@@ -1,0 +1,49 @@
+<div
+  class="fixed z-2 top-4 right-4 size-15 p-1 rounded-full glass-effect hover-lift"
+>
+  <button
+    id="themeBtn"
+    class="rounded-full h-full w-full bg-purple-600 dark:bg-amber-600 flex items-center justify-center text-center"
+    title="Change theme"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      id="sunIcon"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      class="size-9 text-yellow-400 hidden dark:block"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+      ></path>
+    </svg>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      id="moonIcon"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      class="size-9 text-gray-400 block dark:hidden"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+      ></path>
+    </svg>
+  </button>
+</div>
+<script>
+  let isDark = true;
+  const button = document.getElementById('themeBtn');
+
+  button?.addEventListener('click', () => {
+    isDark = !isDark;
+    document.documentElement.classList.toggle('dark');
+  });
+</script>

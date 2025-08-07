@@ -1,17 +1,26 @@
 ---
 import Particles from '../React/Particles';
+import DarkThemeToggle from './DarkThemeToggle.astro';
 ---
 
-<html lang="es">
+<html lang="es" class="dark">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <title>Misael Zurita - Presentation</title>
+
+    <script is:inline>
+      const theme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.classList.toggle('dark', theme === 'dark');
+    </script>
   </head>
-  <body class="bg-slate-900 h-screen text-gray-200 overflow-x-hidden">
+  <body
+    class="bg-white dark:bg-slate-900 h-screen text-gray-900 dark:text-gray-200 overflow-x-hidden transition-colors duration-300"
+  >
     <Particles client:only="preact" />
+    <DarkThemeToggle />
     <slot />
   </body>
 </html>

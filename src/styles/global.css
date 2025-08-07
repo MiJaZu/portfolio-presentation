@@ -3,9 +3,21 @@
 /* Dark mode configuration for v4 */
 @variant dark (.dark &);
 
+@theme {
+  --color-primary: #f8fafc;
+  --color-secondary: #0f172b;
+  --color-t-primary: #1e293b;
+  --color-t-secondary: #475569;
+
+  --color-dark-primary: #0f172b;
+  --color-dark-secondary: #fff;
+  --color-dark-t-primary: #e5e7eb;
+  --color-dark-t-secondary: #99a1af;
+}
+
 /* Effects */
 .glass-effect {
-  @apply bg-white/10 backdrop-blur-md border border-white/10;
+  @apply backdrop-blur-md border shadow-lg border-dark-secondary/10 dark:bg-dark-secondary/10;
 }
 
 /* Animation */

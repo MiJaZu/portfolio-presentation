@@ -22,8 +22,9 @@ import JobCard from '../components/Astro/JobCard.astro';
     <div class="text-center mb-12">
       <div
         class="glass-effect rounded-full px-8 py-3 w-fit mx-auto mb-3 hover-lift"
+        id="github-link"
       >
-        <span class="text-blue-500 text-lg font-mono">@Mijazu</span>
+        <span class="text-blue-500 text-lg font-mono">@MiJaZu</span>
       </div>
       <ColoredText text="Misael Zurita" size={'md'} />
       <div class="max-w-lg mx-auto">
@@ -133,16 +134,26 @@ import JobCard from '../components/Astro/JobCard.astro';
           title="Presentation"
           description="Created a portfolio using Astro JS to learn the library, I learned about the static files, use of tailwind js, and preact js"
           tags={['Typescript', 'Github', 'Tailwind', 'Preact', 'Astro']}
+          url="#presentation-dev-picture"
         />
         <ProjectCard
           title="Personal Blog"
           description="Created My Personal Blog using Next JS to learn the library, I learned navigation between pages, use of CSS Modules in Next JS, pre-rendering and Data fetching, dynamic Routes"
           tags={['CSS', 'Next JS', 'Typescript', 'Github']}
+          url="https://my-next-blog-pi.vercel.app/"
         />
         <ProjectCard
-          title="To Do"
-          description="Simple Todo list for creating editing and deleting the tasks saving them in simple state"
-          tags={['React', 'Node JS', 'Typescript']}
+          title="Hacker news"
+          description="Created a clone of Hacker News using React JS, I learned about the use of React Hooks, Context API, and the use of the Hacker News API"
+          tags={[
+            'React',
+            'Node JS',
+            'Typescript',
+            'Next JS',
+            'Github',
+            'Tailwind',
+          ]}
+          url="https://hacker-news-alpha-six.vercel.app/"
         />
       </div>
     </GlassCard>

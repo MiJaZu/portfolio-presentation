@@ -5,13 +5,15 @@ interface Props {
   title: string;
   description: string;
   tags: string[];
+  url?: string;
 }
 
-const { title, description, tags } = Astro.props;
+const { title, description, tags, url } = Astro.props;
 ---
 
-<div
-  class="glass-effect rounded-2xl p-4 md:p-8 flex flex-col justify-between gap-3 hover-lift text-t-primary dark:text-dark-t-primary"
+<a
+  class="glass-effect rounded-2xl p-4 md:p-8 flex flex-col justify-between gap-3 hover-lift text-t-primary dark:text-dark-t-primary cursor-pointer"
+  href={url}
 >
   <div>
     <h2 class="text-2xl font-bold mb-5">{title}</h2>
@@ -20,4 +22,4 @@ const { title, description, tags } = Astro.props;
     </p>
   </div>
   <Tags tags={tags} />
-</div>
+</a>
